@@ -1,6 +1,6 @@
 {
   "name": "@fivethreeo/start-server-webpack-plugin",
-  "version": "3.0.0-rc11",
+  "version": "3.0.0-rc4",
   "description": "Automatically start your server once Webpack's build completes.",
   "main": "dist/StartServerPlugin.js",
   "files": [
@@ -32,7 +32,7 @@
   "author": "Eric Clemmons <eric@smarterspam.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ericclemmons/start-server-webpack-plugin/issues"
+    "url": "https://github.com/fivethreeo/start-server-webpack-plugin/issues"
   },
   "homepage": "https://github.com/ericclemmons/start-server-webpack-plugin#readme",
   "gsv": {
