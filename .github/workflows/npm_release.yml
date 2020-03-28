@@ -1,4 +1,4 @@
-name: Do release
+namename: Do release
 on:
   release:
     types:
@@ -42,5 +42,6 @@ jobs:
           scope: '@fivethreeo'
           registry-url: https://registry.npmjs.org/
       - run: npm install
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
