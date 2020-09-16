@@ -95,12 +95,12 @@ export default class StartServerPlugin {
       );
     }
 
-    const entryScript = webpack.EntryPlugin
-      ? entry.runtimeChunk.files.values().next().value
-      : entry.chunks[0].files[0];
+    const runtimeChunk = webpack.EntryPlugin && (entry.runtimeChunk || entry._entrypointChunk)
+    const runtimeChunkFiles = runtimeChunk && runtimeChunk.files && runtimeChunk.files.values()
+    const entryScript = (runtimeChunkFiles && runtimeChunkFiles.next().value) || ((entry.chunks[0] || {}).files || [])[0]
     if (!entryScript) {
-      this._error('Entry chunk not outputted: %O', entry);
-      return;
+      this._error("Entry chunk not outputted: %O", entry)
+      return
     }
     const {path} = compilation.outputOptions;
     return sysPath.resolve(path, entryScript);
